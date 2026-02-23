@@ -64,11 +64,11 @@ plt.title("Price by Fuel Type")
 plt.show()
 
 # Average Price by Brand
-top_brands = df['mark'].value_counts().nlargest(10).index
-df_top = df[df['mark'].isin(top_brands)]
+top_brands = df['mark'].value_counts().nlargest(10).index  # find top 10 most common car brands
+df_top = df[df['mark'].isin(top_brands)]  # filter the dataset include only top brands
 
 plt.figure()
-sns.barplot(x='mark', y='price', data=df_top)
+sns.barplot(x='mark', y='price', data=df_top) # shows average price by brand
 plt.xticks(rotation=45)
 plt.title("Average Price by Top Brands")
 plt.show()
